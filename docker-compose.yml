@@ -1,0 +1,20 @@
+services:
+  curso-node:
+    image: papadopoli/curso-node:1.0.0
+    container_name: curso-node
+    ports:
+      - "3000:3000"
+      - "27017:27017"   # remova se nao quiser expor o Mongo
+    env_file:
+      - .env
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      WATCHPACK_POLLING: "true"
+    volumes:
+      - ./app:/app
+      - ./mongo-data:/data/db
+      - node_modules:/app/node_modules   # <<< volume nomeado
+    user: "10001:10001"
+
+volumes:
+  node_modules: {}
