@@ -122,6 +122,15 @@ dist
 # TernJS port file
 .tern-port
 
+# MongoDB Local files
+mongo-data
+
+# Uploads Dir
+app/uploads
+
+# VSCode files
+.vs
+
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
